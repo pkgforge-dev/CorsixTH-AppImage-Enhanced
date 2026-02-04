@@ -10,7 +10,9 @@ pacman -Syu --noconfirm \
     alsa-plugins   \
     doxygen        \
     fluidsynth     \
+    pipewire-alsa  \
     pipewire-audio \
+    pipewire-pulse \
     pipewire-jack  \
     rtmidi
 
