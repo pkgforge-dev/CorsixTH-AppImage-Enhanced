@@ -12,7 +12,6 @@ pacman -Syu --noconfirm \
     fluidsynth     \
     pipewire-alsa  \
     pipewire-audio \
-    pipewire-pulse \
     pipewire-jack  \
     rtmidi
 
