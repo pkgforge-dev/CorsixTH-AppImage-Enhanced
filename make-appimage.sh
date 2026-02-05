@@ -19,7 +19,7 @@ quick-sharun /usr/bin/corsix-th /usr/lib/alsa-lib/libasound_module_pcm_oss.so \
 /usr/lib/alsa-lib/libasound_module_pcm_a52.so \
 /usr/lib/alsa-lib/libasound_module_pcm_speex.so \
 /usr/lib/alsa-lib/libasound_module_pcm_upmix.so \
-/usrlib/alsa-lib/libasound_module_pcm_vdownmix.so \
+/usr/lib/alsa-lib/libasound_module_pcm_vdownmix.so \
 /usr/lib/alsa-lib/libasound_module_pcm_usb_stream.so
 
 # Additional changes can be done in between here
