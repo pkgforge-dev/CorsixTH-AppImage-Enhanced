@@ -9,6 +9,7 @@ echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     doxygen        \
     fluidsynth     \
+    libdecor       \
     pipewire-alsa  \
     pipewire-audio \
     pipewire-jack  \
