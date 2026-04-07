@@ -28,7 +28,7 @@ get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 
 # If the application needs to be manually built that has to be done down here
 mkdir -p ./AppDir/share/soundfonts
-mkdir -p .AppDir/etc/timidity
+mkdir -p ./AppDir/etc/timidity
 cp /usr/share/soundfonts/FluidR3_GM.sf2 ./AppDir/share/soundfonts
 cp /etc/timidity/timidity.cfg ./AppDir/etc/timidity
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
