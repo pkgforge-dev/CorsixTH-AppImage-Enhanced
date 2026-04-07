@@ -10,13 +10,14 @@ pacman -Syu --noconfirm \
     cmake          \
     doxygen        \
     fluidsynth     \
-    freetype2      \
     libdecor       \
     pipewire-alsa  \
     pipewire-audio \
     pipewire-jack  \
     rtmidi         \
-    sdl2_mixer
+    sdl2_mixer     \
+    soundfont-fluid
+    #timidity++
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -45,3 +46,5 @@ else
     cd CorsixTH && make -j$(nproc)
     make install
 fi
+mkdir -p ./AppDir/share/soundfonts
+cp /usr/share/soundfonts/FluidR3_GM.sf2 ./AppDir/share/soundfonts
