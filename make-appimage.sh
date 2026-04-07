@@ -21,3 +21,7 @@ quick-sharun /usr/bin/corsix-th /usr/lib/lua/5.5/lpeg.so
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
+
+# Test the app for 12 seconds, if the test fails due to the app
+# having issues running in the CI use --simple-test instead
+quick-sharun --test ./dist/*.AppImage
