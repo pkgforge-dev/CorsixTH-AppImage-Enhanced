@@ -15,7 +15,7 @@ export DEPLOY_OPENGL=1
 export DEPLOY_PIPEWIRE=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/corsix-th /usr/lib/lua/5.5/lpeg.so
+quick-sharun /usr/bin/corsix-th /usr/lib/lua/*/lpeg.so
 
 # Additional changes can be done in between here
 
