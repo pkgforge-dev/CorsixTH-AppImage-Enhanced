@@ -40,14 +40,8 @@ else
     echo "${VERSION#v}" > ~/version
 
     pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
-    mkdir -p ./AppDir/bin
-    mkdir -p ./AppDir/share/corsix-th
     cd ./CorsixTH
     cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_UNIT_TESTS=OFF -DCMAKE_INSTALL_PREFIX=/usr -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 -DLUA_INCLUDE_DIR=/usr/include/lua5.4 -DLUA_LIBRARY=/usr/lib/liblua5.4.so .
     cd CorsixTH && make -j$(nproc)
     make install
-    #mv -v corsix-th ../../AppDir/bin
-    #mv -v Bitmap Campaigns CorsixTH.lua ../LICENSE.txt Levels Lua ../../AppDir/bin
-    #mv -v CorsixTH/Bitmap CorsixTH/Campaigns CorsixTH/CorsixTH.lua LICENSE.txt CorsixTH/Levels CorsixTH/Lua ../AppDir/share/corsix-th
-    #mv -v CorsixTH/corsix-th ../AppDir/bin
 fi
