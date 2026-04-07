@@ -45,6 +45,6 @@ else
     cd ./CorsixTH
     cmake -DCMAKE_BUILD_TYPE=Release -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 -DLUA_INCLUDE_DIR=/usr/include/lua5.4 -DLUA_LIBRARY=/usr/lib/liblua5.4.so .
     make -j$(nproc)
-    mv -v CorsixTH/Bitmap CorsixTH/Campaigns CorsixTH/CorsixTH.lua CorsixTH/LICENSE.txt CorsixTH/Levels CorsixTH/Lua ../AppDir/share/corsix-th
+    mv -v CorsixTH/Bitmap CorsixTH/Campaigns CorsixTH/CorsixTH.lua LICENSE.txt CorsixTH/Levels CorsixTH/Lua ../AppDir/share/corsix-th
     mv -v CorsixTH/corsix-th ../AppDir/bin
 fi
