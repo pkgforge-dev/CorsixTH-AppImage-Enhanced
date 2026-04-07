@@ -11,9 +11,9 @@
 </p>
 
 
-| Latest Nightly Release | Upstream URL |
-| :---: | :---: |
-| [Click here](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest) | [Click here](https://github.com/CorsixTH/CorsixTH) |
+| Latest Stable Release | Latest Nightly Relase | Upstream URL |
+| :---: | :---: | :---: |
+| [Click here](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest) | [Click here](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/tag/nightly) | [Click here](https://github.com/CorsixTH/CorsixTH) |
 
 </div>
 
