@@ -41,5 +41,7 @@ else
     pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
     mkdir -p ./AppDir/bin
     cd ./CorsixTH
-    
+    cmake -DCMAKE_BUILD_TYPE=Release .
+    make -j$(nproc)
+    mv -v CorsixTH/Bitmap CorsixTH/Campaigns CorsixTH/Graphics CorsixTH/Levels CorsixTH/Lua CorsixTH/Luatest CorsixTH/CorsixTH.lua CorsixTH/corsix-th ../AppDir/bin
 fi
