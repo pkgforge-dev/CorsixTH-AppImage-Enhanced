@@ -27,6 +27,8 @@ get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 
 
 # If the application needs to be manually built that has to be done down here
+mkdir -p ./AppDir/share/soundfonts
+cp /usr/share/soundfonts/FluidR3_GM.sf2 ./AppDir/share/soundfonts
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
     echo "Making nightly build of CorsixTH..."
     echo "---------------------------------------------------------------"
@@ -46,5 +48,3 @@ else
     cd CorsixTH && make -j$(nproc)
     make install
 fi
-mkdir -p ./AppDir/share/soundfonts
-cp /usr/share/soundfonts/FluidR3_GM.sf2 ./AppDir/share/soundfonts
