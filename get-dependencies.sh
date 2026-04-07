@@ -43,7 +43,7 @@ else
     mkdir -p ./AppDir/bin
     cd ./CorsixTH
     cp -v CorsixTH/CorsixTH.lua ../AppDir/bin
-    cmake -DCMAKE_BUILD_TYPE=Release -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 -DLUA_INCLUDE_DIR=/usr/include/lua5.4 -DLUA_LIBRARY=/usr/lib/liblua5.4.so -CMAKE_SOURCE_DIR=./AppDir/bin/CorsixTH.lua .
+    cmake -DCMAKE_BUILD_TYPE=Release -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 -DLUA_INCLUDE_DIR=/usr/include/lua5.4 -DLUA_LIBRARY=/usr/lib/liblua5.4.so -CMAKE_SOURCE_DIR=/AppDir/bin/CorsixTH.lua .
     make -j$(nproc)
     mv -v CorsixTH/Bitmap CorsixTH/Campaigns CorsixTH/Graphics CorsixTH/Levels CorsixTH/Lua CorsixTH/Luatest CorsixTH/corsix-th ../AppDir/bin
 fi
