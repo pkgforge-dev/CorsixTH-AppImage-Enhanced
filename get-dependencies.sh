@@ -10,6 +10,7 @@ pacman -Syu --noconfirm \
     cmake          \
     doxygen        \
     fluidsynth     \
+    freetype2      \
     libdecor       \
     pipewire-alsa  \
     pipewire-audio \
@@ -34,9 +35,11 @@ else
     echo "---------------------------------------------------------------"
     REPO="https://github.com/CorsixTH/CorsixTH"
     VERSION="$(git ls-remote --tags --sort="v:refname" "$REPO" | tail -n1 | sed 's/.*\///; s/\^{}//')"
-    git clone --branch "$VERSION" --single-branch --recursive --depth 1 "$REPO" ./CorsixTH
+    git clone --branch "$VERSION" --single-branch "$REPO" ./CorsixTH
     echo "${VERSION#v}" > ~/version
 
+    pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
     mkdir -p ./AppDir/bin
     cd ./CorsixTH
+    
 fi
