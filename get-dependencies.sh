@@ -40,11 +40,10 @@ else
     echo "${VERSION#v}" > ~/version
 
     pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
-    mkdir -p ./AppDir/bin
+    mkdir -p ./AppDir/bin/CorsixTH
     cd ./CorsixTH
-    cp -rv CorsixTH/Bitmap CorsixTH/Campaigns CorsixTH/Graphics CorsixTH/Levels CorsixTH/Lua CorsixTH/Luatest CorsixTH/CorsixTH.lua ../AppDir/bin
-    cmake -DCMAKE_BUILD_TYPE=Release -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 -DLUA_INCLUDE_DIR=/usr/include/lua5.4 -DLUA_LIBRARY=/usr/lib/liblua5.4.so -CMAKE_SOURCE_DIR=../AppDir/bin .
+    cmake -DCMAKE_BUILD_TYPE=Release -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 -DLUA_INCLUDE_DIR=/usr/include/lua5.4 -DLUA_LIBRARY=/usr/lib/liblua5.4.so .
     make -j$(nproc)
-    #mv -v CorsixTH/Bitmap CorsixTH/Campaigns CorsixTH/Graphics CorsixTH/Levels CorsixTH/Lua CorsixTH/Luatest CorsixTH/corsix-th ../AppDir/bin
+    mv -v CorsixTH/Bitmap CorsixTH/Campaigns CorsixTH/CorsixTH.lua CorsixTH/Graphics CorsixTH/Levels CorsixTH/Lua CorsixTH/Luatest ../AppDir/bin/CorsixTH
     mv -v CorsixTH/corsix-th ../AppDir/bin
 fi
