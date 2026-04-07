@@ -14,12 +14,12 @@ export DEPLOY_OPENGL=1
 export DEPLOY_PIPEWIRE=1
 
 # Deploy dependencies
-if [ "${DEVEL_RELEASE-}" = 1 ]; then
+#if [ "${DEVEL_RELEASE-}" = 1 ]; then
   quick-sharun /usr/bin/corsix-th /usr/lib/lua/*/lpeg.so
-else
-  quick-sharun ./AppDir/bin/* /usr/lib/lua/*/lpeg.so
+#else
+#  quick-sharun ./AppDir/bin/* /usr/lib/lua/*/lpeg.so
   #echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/bin' >> ./AppDir/.env
-fi
+#fi
 
 # Additional changes can be done in between here
 
