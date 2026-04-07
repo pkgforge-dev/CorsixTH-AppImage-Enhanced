@@ -8,8 +8,8 @@ export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export ICON=/usr/share/icons/hicolor/scalable/apps/corsix-th.svg
-export DESKTOP=/usr/share/applications/com.corsixth.corsixth.desktop
+export ICON=https://raw.githubusercontent.com/CorsixTH/CorsixTH/refs/heads/master/CorsixTH/Original_Logo.svg
+export DESKTOP=https://raw.githubusercontent.com/CorsixTH/CorsixTH/refs/heads/master/CorsixTH/com.corsixth.corsixth.desktop
 export STARTUPWMCLASS=corsix-th
 export DEPLOY_OPENGL=1
 export DEPLOY_PIPEWIRE=1
