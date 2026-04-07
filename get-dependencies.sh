@@ -7,17 +7,17 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    cmake          \
-    doxygen        \
-    fluidsynth     \
-    libdecor       \
-    pipewire-alsa  \
-    pipewire-audio \
-    pipewire-jack  \
-    rtmidi         \
-    sdl2_mixer     \
-    soundfont-fluid
-    #timidity++
+    cmake           \
+    doxygen         \
+    fluidsynth      \
+    libdecor        \
+    pipewire-alsa   \
+    pipewire-audio  \
+    pipewire-jack   \
+    rtmidi          \
+    sdl2_mixer      \
+    soundfont-fluid \
+    timidity++
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -28,7 +28,9 @@ get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 
 # If the application needs to be manually built that has to be done down here
 mkdir -p ./AppDir/share/soundfonts
+mkdir -p .AppDir/etc/timidity
 cp /usr/share/soundfonts/FluidR3_GM.sf2 ./AppDir/share/soundfonts
+cp /etc/timidity/timidity.cfg ./AppDir/etc/timidity
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
     echo "Making nightly build of CorsixTH..."
     echo "---------------------------------------------------------------"
