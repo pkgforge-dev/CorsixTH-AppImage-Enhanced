@@ -24,7 +24,17 @@ get-debloated-pkgs --add-common --prefer-nano
 
 # If the application needs to be manually built that has to be done down here
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
+    echo "Making nightly build of CorsixTH..."
+    echo "---------------------------------------------------------------"
     make-aur-package corsix-th-git
 else
+    echo "Making stable build of CorsixTH..."
+    echo "---------------------------------------------------------------"
+    REPO="https://github.com/CorsixTH/CorsixTH"
+    VERSION="$(git ls-remote --tags --sort="v:refname" "$REPO" | tail -n1 | sed 's/.*\///; s/\^{}//')"
+    git clone --branch "$VERSION" --single-branch --recursive --depth 1 "$REPO" ./CorsixTH
+    echo "$VERSION" > ~/version
 
+    mkdir -p ./AppDir/bin
+    cd ./CorsixTH
 fi
