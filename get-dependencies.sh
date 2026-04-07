@@ -42,7 +42,7 @@ else
     pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
     mkdir -p ./AppDir/bin
     cd ./CorsixTH
-    cmake -DCMAKE_BUILD_TYPE=Release -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 -DLUA_INCLUDE_DIR=/usr/include -DLUA_LIBRARY=/usr/lib/liblua5.4.so .
+    cmake -DCMAKE_BUILD_TYPE=Release -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 -DLUA_INCLUDE_DIR=/usr/include/lua5.4 -DLUA_LIBRARY=/usr/lib/liblua5.4.so .
     make -j$(nproc)
     mv -v CorsixTH/Bitmap CorsixTH/Campaigns CorsixTH/Graphics CorsixTH/Levels CorsixTH/Lua CorsixTH/Luatest CorsixTH/CorsixTH.lua CorsixTH/corsix-th ../AppDir/bin
 fi
