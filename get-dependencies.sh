@@ -30,6 +30,7 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     echo "Making nightly build of CorsixTH..."
     echo "---------------------------------------------------------------"
     make-aur-package corsix-th-git
+    VERSION=$(pacman -Q corsix-th-git | awk '{print $2; exit}')
 else
     echo "Making stable build of CorsixTH..."
     echo "---------------------------------------------------------------"
