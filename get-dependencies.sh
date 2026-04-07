@@ -7,13 +7,15 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
+    cake           \
     doxygen        \
     fluidsynth     \
     libdecor       \
     pipewire-alsa  \
     pipewire-audio \
     pipewire-jack  \
-    rtmidi
+    rtmidi         \
+    sdl2_mixer
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -33,7 +35,7 @@ else
     REPO="https://github.com/CorsixTH/CorsixTH"
     VERSION="$(git ls-remote --tags --sort="v:refname" "$REPO" | tail -n1 | sed 's/.*\///; s/\^{}//')"
     git clone --branch "$VERSION" --single-branch --recursive --depth 1 "$REPO" ./CorsixTH
-    echo "$VERSION" > ~/version
+    echo "${VERSION#v}" > ~/version
 
     mkdir -p ./AppDir/bin
     cd ./CorsixTH
