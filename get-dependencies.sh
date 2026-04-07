@@ -16,8 +16,7 @@ pacman -Syu --noconfirm \
     pipewire-jack   \
     rtmidi          \
     sdl2_mixer      \
-    soundfont-fluid \
-    timidity++
+    soundfont-fluid
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -28,9 +27,7 @@ get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 
 # If the application needs to be manually built that has to be done down here
 mkdir -p ./AppDir/share/soundfonts
-mkdir -p ./AppDir/bin
 cp /usr/share/soundfonts/FluidR3_GM.sf2 ./AppDir/share/soundfonts
-cp /etc/timidity/timidity.cfg ./AppDir/bin
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
     echo "Making nightly build of CorsixTH..."
     echo "---------------------------------------------------------------"
@@ -44,7 +41,10 @@ else
     git clone --branch "$VERSION" --single-branch "$REPO" ./CorsixTH
     echo "${VERSION#v}" > ~/version
 
-    pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
+    pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg timidity++
+    mkdir -p ./AppDir/bin
+    cp /etc/timidity/timidity.cfg ./AppDir/bin
+    
     cd ./CorsixTH
     cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_UNIT_TESTS=OFF -DCMAKE_INSTALL_PREFIX=/usr -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 -DLUA_INCLUDE_DIR=/usr/include/lua5.4 -DLUA_LIBRARY=/usr/lib/liblua5.4.so .
     cd CorsixTH && make -j$(nproc)
