@@ -3,7 +3,7 @@
 # CorsixTH-AppImage-Enhanced 🐧
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/CorsixTH-AppImage-Enhanced/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest)
-[![CI Build Status](https://github.com//pkgforge-dev/CorsixTH-AppImage-Enhanced/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest)
+[![CI Build Status](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest)
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/CorsixTH-AppImage-Enhanced)](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest)
 
 <p align="center">
@@ -11,15 +11,15 @@
 </p>
 
 
-| Latest Nightly Release | Upstream URL |
-| :---: | :---: |
-| [Click here](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest) | [Click here](https://github.com/CorsixTH/CorsixTH) |
+| Latest Stable Release | Latest Nightly Release | Upstream URL |
+| :---: | :---: | :---: |
+| [Click here](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest) | [Click here](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/tag/nightly) | [Click here](https://github.com/CorsixTH/CorsixTH) |
 
 </div>
 
 ---
 
-AppImage made using [sharun](https://github.com/VHSgunzo/sharun) and its wrapper [quick-sharun](https://github.com/pkgforge-dev/Anylinux-AppImages/blob/main/useful-tools/quick-sharun.sh), which makes it extremely easy to turn any binary into a portable package reliably without using containers or similar tricks. 
+AppImage made using [quick-sharun](https://github.com/pkgforge-dev/Anylinux-AppImages/blob/main/useful-tools/quick-sharun.sh), which makes it extremely easy to turn any binary into a portable package reliably without using containers or similar tricks. 
 
 **This AppImage bundles everything and it should work on any Linux distro, including old and musl-based ones.**
 
