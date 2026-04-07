@@ -10,7 +10,6 @@ pacman -Syu --noconfirm \
     cmake          \
     doxygen        \
     fluidsynth     \
-    freetype2      \
     libdecor       \
     pipewire-alsa  \
     pipewire-audio \
