@@ -26,7 +26,9 @@ quick-sharun /usr/bin/corsix-th /usr/lib/lua/*/lpeg.so \
 /usr/lib/alsa-lib/libasound_module_pcm_upmix.so \
 /usr/lib/alsa-lib/libasound_module_pcm_vdownmix.so \
 /usr/lib/alsa-lib/libasound_module_pcm_usb_stream.so
+
 echo 'SDL_SOUNDFONTS=${SHARUN_DIR}/share/soundfonts/FluidR3_GM.sf2' >> ./AppDir/.env
+echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/bin' >> ./AppDir/.env
 
 # Additional changes can be done in between here
 
