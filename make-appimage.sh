@@ -14,7 +14,18 @@ export DEPLOY_OPENGL=1
 export DEPLOY_PIPEWIRE=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/corsix-th /usr/lib/lua/*/lpeg.so
+quick-sharun /usr/bin/corsix-th /usr/lib/lua/*/lpeg.so \
+/usr/lib/alsa-lib/libasound_module_pcm_pipewire.so \
+/usr/lib/alsa-lib/libasound_module_rate_lavrate.so \
+/usr/lib/alsa-lib/libasound_module_rate_samplerate.so \
+/usr/lib/alsa-lib/libasound_module_rate_speexrate.so \
+/usr/lib/alsa-lib/libasound_module_pcm_jack.so \
+/usr/lib/alsa-lib/libasound_module_pcm_oss.so \
+/usr/lib/alsa-lib/libasound_module_pcm_a52.so \
+/usr/lib/alsa-lib/libasound_module_pcm_speex.so \
+/usr/lib/alsa-lib/libasound_module_pcm_upmix.so \
+/usr/lib/alsa-lib/libasound_module_pcm_vdownmix.so \
+/usr/lib/alsa-lib/libasound_module_pcm_usb_stream.so
 echo 'SDL_SOUNDFONTS=${SHARUN_DIR}/share/soundfonts/FluidR3_GM.sf2' >> ./AppDir/.env
 
 # Additional changes can be done in between here
