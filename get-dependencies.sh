@@ -46,7 +46,14 @@ else
     cp /etc/timidity/timidity.cfg ./AppDir/bin
     
     cd ./CorsixTH
-    cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_UNIT_TESTS=OFF -DCMAKE_INSTALL_PREFIX=/usr -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 -DLUA_INCLUDE_DIR=/usr/include/lua5.4 -DLUA_LIBRARY=/usr/lib/liblua5.4.so .
+    cmake . \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DENABLE_UNIT_TESTS=OFF \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 \
+        -DLUA_INCLUDE_DIR=/usr/include/lua5.4 \
+        -DLUA_LIBRARY=/usr/lib/liblua5.4.so
+
     cd CorsixTH && make -j$(nproc)
     make install
 fi
