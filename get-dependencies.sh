@@ -16,8 +16,7 @@ pacman -Syu --noconfirm \
     pipewire-jack   \
     rtmidi          \
     sdl2_mixer      \
-    timidity++      \
-    xorg-xmessage
+    timidity++
     #soundfont-fluid
 
 echo "Installing debloated packages..."
@@ -25,7 +24,7 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 
 # Comment this out if you need an AUR package
-
+make-aur-package zenity-rs-bin
 
 # If the application needs to be manually built that has to be done down here
 #mkdir -p ./AppDir/share/soundfonts
