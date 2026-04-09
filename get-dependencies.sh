@@ -16,7 +16,7 @@ pacman -Syu --noconfirm \
     pipewire-jack   \
     rtmidi          \
     sdl2_mixer      \
-    vcpkg           \
+    timidity++      \
     xorg-xmessage
     #soundfont-fluid
 
@@ -38,8 +38,9 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     git clone "$REPO" ./CorsixTH
     echo "$VERSION" > ~/version
 
-    pacman -S --noconfirm lua lua-filesystem lua-lpeg
+    pacman -S --noconfirm lua-filesystem lua-lpeg
     mkdir -p ./AppDir/bin
+    cp /etc/timidity/timidity.cfg ./AppDir/bin
     cd ./CorsixTH
     cmake . \
         -DCMAKE_BUILD_TYPE=Release \
@@ -58,9 +59,9 @@ else
     git clone --branch "$VERSION" --single-branch "$REPO" ./CorsixTH
     echo "${VERSION#v}" > ~/version
 
-    pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg timidity++
-    #mkdir -p ./AppDir/bin
-    #cp /etc/timidity/timidity.cfg ./AppDir/bin
+    pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
+    mkdir -p ./AppDir/bin
+    cp /etc/timidity/timidity.cfg ./AppDir/bin
     
     cd ./CorsixTH
     cmake . \
