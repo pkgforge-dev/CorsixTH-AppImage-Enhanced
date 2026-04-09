@@ -46,7 +46,7 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
         -DENABLE_UNIT_TESTS=OFF \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DLUA_PROGRAM_PATH=/usr/bin/lua \
-        -DLUA_INCLUDE_DIR=/usr/include/lua \
+        -DLUA_INCLUDE_DIR=/usr/include \
         -DLUA_LIBRARY=/usr/lib/liblua5.5.so
 
     cd CorsixTH && make -j$(nproc)
