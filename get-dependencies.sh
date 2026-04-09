@@ -11,6 +11,7 @@ pacman -Syu --noconfirm \
     doxygen         \
     fluidsynth      \
     libdecor        \
+    libnotify       \
     pipewire-alsa   \
     pipewire-audio  \
     pipewire-jack   \
