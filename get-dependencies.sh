@@ -45,7 +45,8 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     cmake . \
         -DCMAKE_BUILD_TYPE=Release \
         -DENABLE_UNIT_TESTS=OFF \
-        -DCMAKE_INSTALL_PREFIX=/usr
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DFETCH_SOUNDFONT=ON
 
     cd CorsixTH && make -j$(nproc)
     make install
@@ -64,7 +65,8 @@ else
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 \
         -DLUA_INCLUDE_DIR=/usr/include/lua5.4 \
-        -DLUA_LIBRARY=/usr/lib/liblua5.4.so
+        -DLUA_LIBRARY=/usr/lib/liblua5.4.so \
+        -DFETCH_SOUNDFONT=ON
 
     cd CorsixTH && make -j$(nproc)
     make install
