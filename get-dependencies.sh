@@ -44,10 +44,7 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     cmake . \
         -DCMAKE_BUILD_TYPE=Release \
         -DENABLE_UNIT_TESTS=OFF \
-        -DCMAKE_INSTALL_PREFIX=/usr \
-        -DLUA_PROGRAM_PATH=/usr/bin/lua \
-        -DLUA_INCLUDE_DIR=/usr/include \
-        -DLUA_LIBRARY=/usr/lib/liblua5.5.so
+        -DCMAKE_INSTALL_PREFIX=/usr
 
     cd CorsixTH && make -j$(nproc)
     make install
