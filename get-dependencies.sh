@@ -29,6 +29,9 @@ make-aur-package zenity-rs-bin
 # If the application needs to be manually built that has to be done down here
 #mkdir -p ./AppDir/share/soundfonts
 #cp /usr/share/soundfonts/FluidR3_GM.sf2 ./AppDir/share/soundfonts
+mkdir -p ./AppDir/bin
+cp /etc/timidity/timidity.cfg ./AppDir/bin
+
 REPO="https://github.com/CorsixTH/CorsixTH"
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
     echo "Making nightly build of CorsixTH..."
@@ -38,8 +41,6 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
     echo "$VERSION" > ~/version
 
     pacman -S --noconfirm lua-filesystem lua-lpeg
-    mkdir -p ./AppDir/bin
-    cp /etc/timidity/timidity.cfg ./AppDir/bin
     cd ./CorsixTH
     cmake . \
         -DCMAKE_BUILD_TYPE=Release \
@@ -56,9 +57,6 @@ else
     echo "${VERSION#v}" > ~/version
 
     pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
-    mkdir -p ./AppDir/bin
-    cp /etc/timidity/timidity.cfg ./AppDir/bin
-    
     cd ./CorsixTH
     cmake . \
         -DCMAKE_BUILD_TYPE=Release \
