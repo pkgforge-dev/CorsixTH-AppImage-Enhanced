@@ -11,13 +11,13 @@ pacman -Syu --noconfirm \
     doxygen         \
     fluidsynth      \
     libdecor        \
-    libnotify       \
     pipewire-alsa   \
     pipewire-audio  \
     pipewire-jack   \
     rtmidi          \
-    sdl2_mixer
-    #vcpkg
+    sdl2_mixer      \
+    vcpkg           \
+    xorg-xmessage
     #soundfont-fluid
 
 echo "Installing debloated packages..."
