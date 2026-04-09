@@ -65,8 +65,7 @@ else
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 \
         -DLUA_INCLUDE_DIR=/usr/include/lua5.4 \
-        -DLUA_LIBRARY=/usr/lib/liblua5.4.so \
-        -DFETCH_SOUNDFONT=ON
+        -DLUA_LIBRARY=/usr/lib/liblua5.4.so
 
     cd CorsixTH && make -j$(nproc)
     make install
