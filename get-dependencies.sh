@@ -7,66 +7,56 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-    cmake           \
-    doxygen         \
-    fluidsynth      \
-    libdecor        \
-    pipewire-alsa   \
-    pipewire-audio  \
-    pipewire-jack   \
-    rtmidi          \
-    sdl2_mixer      \
-    timidity++
-    #soundfont-fluid
+	cmake           \
+	doxygen         \
+	fluidsynth      \
+	libdecor        \
+	pipewire-alsa   \
+	pipewire-audio  \
+	pipewire-jack   \
+	rtmidi          \
+	sdl2_mixer      \
+	timidity++
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 
 # Comment this out if you need an AUR package
-make-aur-package zenity-rs-bin
+# make-aur-package zenity-rs-bin
 
 # If the application needs to be manually built that has to be done down here
-#mkdir -p ./AppDir/share/soundfonts
-#cp /usr/share/soundfonts/FluidR3_GM.sf2 ./AppDir/share/soundfonts
-mkdir -p ./AppDir/bin
-cp /etc/timidity/timidity.cfg ./AppDir/bin
+git clone https://github.com/CorsixTH/CorsixTH ./corsixth
+cd ./corsixth
 
-REPO="https://github.com/CorsixTH/CorsixTH"
+set --
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
-    echo "Making nightly build of CorsixTH..."
-    echo "---------------------------------------------------------------"
-    VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
-    git clone "$REPO" ./CorsixTH
-    echo "$VERSION" > ~/version
-
-    pacman -S --noconfirm lua-filesystem lua-lpeg
-    cd ./CorsixTH
-    cmake . \
-        -DCMAKE_BUILD_TYPE=Release \
-        -DENABLE_UNIT_TESTS=OFF \
-        -DCMAKE_INSTALL_PREFIX=/usr \
-        -DFETCH_SOUNDFONT=ON
-
-    cd CorsixTH && make -j$(nproc)
-    make install
+	echo "Making nightly build of CorsixTH..."
+	echo "---------------------------------------------------------------"
+	pacman -S --noconfirm lua-filesystem lua-lpeg
+	git rev-parse --short HEAD > ~/version
 else
-    echo "Making stable build of CorsixTH..."
-    echo "---------------------------------------------------------------"
-    VERSION="$(git ls-remote --tags --sort="v:refname" "$REPO" | tail -n1 | sed 's/.*\///; s/\^{}//')"
-    git clone --branch "$VERSION" --single-branch "$REPO" ./CorsixTH
-    echo "${VERSION#v}" > ~/version
-
-    pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
-    cd ./CorsixTH
-    cmake . \
-        -DCMAKE_BUILD_TYPE=Release \
-        -DENABLE_UNIT_TESTS=OFF \
-        -DCMAKE_INSTALL_PREFIX=/usr \
-        -DLUA_PROGRAM_PATH=/usr/bin/lua5.4 \
-        -DLUA_INCLUDE_DIR=/usr/include/lua5.4 \
-        -DLUA_LIBRARY=/usr/lib/liblua5.4.so
-
-    cd CorsixTH && make -j$(nproc)
-    make install
+	echo "Making stable build of CorsixTH..."
+	echo "---------------------------------------------------------------"
+	pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
+	git fetch --tags origin
+	TAG=$(git tag --sort=-v:refname | grep -vi 'rc\|alpha' | head -1)
+	git checkout "$TAG"
+	echo "$TAG" > ~/version
+	set -- \
+		-DLUA_PROGRAM_PATH=/usr/bin/lua5.4    \
+		-DLUA_INCLUDE_DIR=/usr/include/lua5.4 \
+		-DLUA_LIBRARY=/usr/lib/liblua5.4.so
 fi
+
+mkdir ./build
+cd ./build
+
+cmake ../ \
+	-DCMAKE_BUILD_TYPE=Release  \
+	-DENABLE_UNIT_TESTS=OFF     \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	"$@"
+
+make -j$(nproc)
+make install
