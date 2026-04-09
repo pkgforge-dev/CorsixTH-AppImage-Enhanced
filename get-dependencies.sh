@@ -15,8 +15,9 @@ pacman -Syu --noconfirm \
     pipewire-audio  \
     pipewire-jack   \
     rtmidi          \
-    sdl2_mixer      \
-    soundfont-fluid
+    sdl2_mixer
+    #vcpkg
+    #soundfont-fluid
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -26,8 +27,8 @@ get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 
 
 # If the application needs to be manually built that has to be done down here
-mkdir -p ./AppDir/share/soundfonts
-cp /usr/share/soundfonts/FluidR3_GM.sf2 ./AppDir/share/soundfonts
+#mkdir -p ./AppDir/share/soundfonts
+#cp /usr/share/soundfonts/FluidR3_GM.sf2 ./AppDir/share/soundfonts
 REPO="https://github.com/CorsixTH/CorsixTH"
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
     echo "Making nightly build of CorsixTH..."
@@ -57,8 +58,8 @@ else
     echo "${VERSION#v}" > ~/version
 
     pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg timidity++
-    mkdir -p ./AppDir/bin
-    cp /etc/timidity/timidity.cfg ./AppDir/bin
+    #mkdir -p ./AppDir/bin
+    #cp /etc/timidity/timidity.cfg ./AppDir/bin
     
     cd ./CorsixTH
     cmake . \
