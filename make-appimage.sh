@@ -22,6 +22,7 @@ echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/bin' >> ./AppDir/.env
 # Additional changes can be done in between here
 mkdir -p ./AppDir/share/soundfonts
 wget https://raw.githubusercontent.com/Jacalz/fluid-soundfont/master/SF3/FluidR3.sf3 -O ./AppDir/share/soundfonts/FluidR3.sf3
+echo 'SDL_SOUNDFONTS=${SHARUN_DIR}/share/soundfonts/FluidR3.sf3' >> ./AppDir/.env
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
