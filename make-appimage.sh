@@ -5,7 +5,7 @@ set -eu
 ARCH=$(uname -m)
 export ARCH
 export OUTPATH=./dist
-export ADD_HOOKS="self-updater.bg.hook"
+export ADD_HOOKS="self-updater.bg.hook:sdl-soundfonts.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export ICON=https://raw.githubusercontent.com/CorsixTH/CorsixTH/refs/heads/master/CorsixTH/Original_Logo.svg
 export DESKTOP=https://raw.githubusercontent.com/CorsixTH/CorsixTH/refs/heads/master/CorsixTH/com.corsixth.corsixth.desktop
