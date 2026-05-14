@@ -17,6 +17,7 @@ export DEPLOY_PIPEWIRE=1
 quick-sharun /usr/bin/corsix-th /usr/lib/lua/*/lpeg.so /usr/lib/alsa-lib /usr/lib/libpulse-simple.so* /usr/lib/libfluidsynth.so*
 
 cp -v /etc/timidity/timidity.cfg ./AppDir/bin
+cp -v ./LICENSE.txt ./AppDir
 echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/bin' >> ./AppDir/.env
 
 # Additional changes can be done in between here
