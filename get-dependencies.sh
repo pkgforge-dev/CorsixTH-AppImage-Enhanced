@@ -27,7 +27,9 @@ get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 
 # If the application needs to be manually built that has to be done down here
 git clone https://github.com/CorsixTH/CorsixTH ./corsixth
+mkdir -p ./AppDir
 cd ./corsixth
+cp -v ./LICENSE.txt ../AppDir
 
 set --
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
