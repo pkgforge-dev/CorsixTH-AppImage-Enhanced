@@ -16,6 +16,7 @@ pacman -Syu --noconfirm \
 	pipewire-jack   \
 	rtmidi          \
 	sdl2_mixer      \
+	sdl3_mixer		\
 	timidity++
 
 echo "Installing debloated packages..."
