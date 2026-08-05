@@ -43,7 +43,7 @@ else
 	echo "---------------------------------------------------------------"
 	pacman -S --noconfirm lua54 lua54-filesystem lua54-lpeg
 	git fetch --tags origin
-	TAG=$(git tag --sort=-v:refname | grep -vi 'rc\|alpha' | head -1)
+	TAG=$(git tag --sort=-v:refname | grep -vi 'rc\|alpha\|beta' | head -1)
 	git checkout "$TAG"
 	echo "$TAG" > ~/version
 	set -- \
