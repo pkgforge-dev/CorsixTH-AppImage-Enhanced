@@ -7,26 +7,22 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
-	cmake           \
-	doxygen         \
-	fluidsynth      \
-	libdecor        \
-	pipewire-alsa   \
-	pipewire-audio  \
-	pipewire-jack   \
-	rtmidi          \
-	sdl2_mixer      \
-	sdl3_mixer		\
+	cmake          \
+	doxygen        \
+	fluidsynth     \
+	libdecor       \
+	pipewire-alsa  \
+	pipewire-audio \
+	pipewire-jack  \
+	rtmidi         \
+	sdl2_mixer     \
+	sdl3_mixer	   \
 	timidity++
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
 
-# Comment this out if you need an AUR package
-# make-aur-package zenity-rs-bin
-
-# If the application needs to be manually built that has to be done down here
 git clone https://github.com/CorsixTH/CorsixTH ./corsixth
 mkdir -p ./AppDir
 cd ./corsixth
