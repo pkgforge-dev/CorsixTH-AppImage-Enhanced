@@ -3,7 +3,7 @@
 # CorsixTH-AppImage-Enhanced 🐧
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/CorsixTH-AppImage-Enhanced/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest)
-[![CI Build Status](https://github.com//pkgforge-dev/CorsixTH-AppImage-Enhanced/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest)
+[![CI Build Status](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest)
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/CorsixTH-AppImage-Enhanced)](https://github.com/pkgforge-dev/CorsixTH-AppImage-Enhanced/releases/latest)
 
 <p align="center">
