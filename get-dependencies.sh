@@ -10,7 +10,6 @@ pacman -Syu --noconfirm \
 	cmake          \
 	doxygen        \
 	fluidsynth     \
-	libdecor       \
 	pipewire-alsa  \
 	pipewire-audio \
 	pipewire-jack  \
@@ -21,7 +20,7 @@ pacman -Syu --noconfirm \
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini
+get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini libdecor-mini
 
 git clone https://github.com/CorsixTH/CorsixTH ./corsixth
 mkdir -p ./AppDir
