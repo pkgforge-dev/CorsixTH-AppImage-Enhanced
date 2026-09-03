@@ -22,10 +22,9 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini libdecor-mini
 
-git clone https://github.com/CorsixTH/CorsixTH ./corsixth
-mkdir -p ./AppDir
+REPO="https://github.com/CorsixTH/CorsixTH"
+git clone "$REPO" ./corsixth
 cd ./corsixth
-cp -v ./LICENSE.txt ../AppDir
 
 set --
 if [ "${DEVEL_RELEASE-}" = 1 ]; then
@@ -47,14 +46,10 @@ else
 		-DLUA_LIBRARY=/usr/lib/liblua5.4.so
 fi
 
-mkdir ./build
-cd ./build
-
-cmake ../ \
+cmake -S ./ -B build \
 	-DCMAKE_BUILD_TYPE=Release  \
 	-DENABLE_UNIT_TESTS=OFF     \
 	-DCMAKE_INSTALL_PREFIX=/usr \
 	"$@"
-
-make -j$(nproc)
-make install
+cmake --build build -j$(nproc)
+cmake --install build
