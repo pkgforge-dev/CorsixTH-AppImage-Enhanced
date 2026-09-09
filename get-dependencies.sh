@@ -23,7 +23,7 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ffmpeg-mini libdecor-mini
 
 REPO="https://github.com/CorsixTH/CorsixTH"
-git clone "$REPO" ./corsixth
+git clone --depth 1 "$REPO" ./corsixth
 cd ./corsixth
 
 set --
