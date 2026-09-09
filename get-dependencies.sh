@@ -46,7 +46,7 @@ else
 		-DLUA_LIBRARY=/usr/lib/liblua5.4.so
 fi
 
-cmake -S ./ -B build \
+cmake ./ -B build \
 	-DCMAKE_BUILD_TYPE=Release  \
 	-DENABLE_UNIT_TESTS=OFF     \
 	-DCMAKE_INSTALL_PREFIX=/usr \
